@@ -76,10 +76,12 @@ class Stoper extends React.Component {
   render() {
     return (
       <>
-        <p>{this.state.seconds}</p>
-        <button onClick={this.start}>start</button>
-        <button onClick={this.pause}>pause</button>
-        <button onClick={this.reset}>reset</button>
+        <p className="stoperDigits">{this.state.seconds}</p>
+        <div className="sectionButtons">
+          <button onClick={this.start}>start</button>
+          <button onClick={this.pause}>pause</button>
+          <button onClick={this.reset}>reset</button>
+        </div>
       </>
     );
   }
@@ -93,7 +95,7 @@ class Timer extends React.Component {
 
   handleMinutes = (e) => {
     if (e.target.value < 0) {
-      alert("please dont use negative numbers ");
+      alert("please dont use negative numbers");
     }
     this.setState({
       minutes: e.target.value,
@@ -137,7 +139,6 @@ class Timer extends React.Component {
 
   componentDidUpdate = () => {
     if (this.state.minutes === 0 && this.state.seconds === 0 && this.interval) {
-      
       clearInterval(this.interval);
     } else if (
       this.state.seconds === 0 &&
@@ -171,9 +172,11 @@ class Timer extends React.Component {
           value={this.state.seconds}
         />{" "}
         <br />
-        <button onClick={this.handleStart}>start</button>
-        <button onClick={this.handlePause}>pause</button>
-        <button onClick={this.handleReset}>reset</button>
+        <div className="sectionButtons">
+          <button onClick={this.handleStart}>start</button>
+          <button onClick={this.handlePause}>pause</button>
+          <button onClick={this.handleReset}>reset</button>
+        </div>
       </>
     );
   }
@@ -190,12 +193,14 @@ class App extends React.Component {
     });
   };
   render() {
-    // const { type } = this.state;
     return (
       <>
-        <button onClick={() => this.changeType("clock")}>Clock</button>
-        <button onClick={() => this.changeType("stoper")}>Stoper</button>
-        <button onClick={() => this.changeType("timer")}>Timer</button> <br />
+        <div className="mainButtons">
+          <button onClick={() => this.changeType("clock")}>clock</button>
+          <button onClick={() => this.changeType("stoper")}>stoper</button>
+          <button onClick={() => this.changeType("timer")}>timer</button>
+        </div>
+        <br />
         {this.state.type === "clock" ? <Clock /> : null}
         {this.state.type === "stoper" ? <Stoper /> : null}
         {this.state.type === "timer" ? <Timer /> : null}

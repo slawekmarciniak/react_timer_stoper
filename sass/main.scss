@@ -1,0 +1,60 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto:ital@1&display=swap');
+
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // background-color: seashell;
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 10px; 
+    padding: 5px; 
+    font-family: 'Odibee Sans', cursive; 
+}
+
+button {
+font-family: 'Roboto', sans-serif;
+margin-left: 10px;
+margin-top: 30px;
+height: 50px;
+width: 60px;
+border: 2px solid ghostwhite;
+border-radius: 5px;
+color: gray;
+transition: 0.2s;
+
+}
+
+button:hover {
+    background-color: gold;
+    color: black;
+}
+
+
+.mainButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    width: 100px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    height: 1.5rem;
+    font-size: 15px;
+    font-family: 'Odibee Sans', cursive;
+}
+
+.stoperDigits {
+    font-size: 20px;
+}
+
