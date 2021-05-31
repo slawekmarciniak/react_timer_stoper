@@ -138,6 +138,18 @@ class Timer extends React.Component {
   };
 
   componentDidUpdate = () => {
+    if (this.state.minutes < 0) {
+      this.setState({
+        minutes: 0,
+      });
+    }
+
+    if (this.state.seconds < 0) {
+      this.setState({
+        seconds: 0,
+      });
+    }
+
     if (this.state.minutes === 0 && this.state.seconds === 0 && this.interval) {
       clearInterval(this.interval);
     } else if (
